@@ -8,7 +8,7 @@
 import tensorflow as tf
 import numpy as np
 
-#在内存中保存更改是什么，内存卡降低为你
+#在内存中生成模拟数据
 def GenerateData(datasize = 100):
     train_X = np.linspace(-1, 1, datasize)   #train_X为-1到1之间连续的100个浮点数
     train_Y = 2 * train_X + np.random.randn(*train_X.shape) * 0.3 # y=2x，但是加入了噪声
