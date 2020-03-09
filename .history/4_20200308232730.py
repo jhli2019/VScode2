@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-@author: 代码医生工作室 
-@公众号：xiangyuejiqiren   （内有更多优秀文章及学习资料）
-@来源: <深度学习之TensorFlow工程化项目实战>配套代码 （700+页）
-@配套代码技术支持：bbs.aianaconda.com      (有问必答)
-"""
+
 import tensorflow as tf
 import numpy as np
 
@@ -21,7 +16,7 @@ dataset = tf.data.Dataset.from_tensor_slices( train_data )		#元祖
 dataset2 = tf.data.Dataset.from_tensor_slices( {                #字典
         "x":train_data[0],
         "y":train_data[1]
-        } )		#
+        } )#
 
 batchsize = 10  #定义批次样本个数
 dataset3 = dataset.repeat().batch(batchsize) #批次划分数据集

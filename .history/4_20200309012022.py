@@ -1,18 +1,13 @@
 # -*- coding: utf-8 -*-
-"""
-@author: 代码医生工作室 
-@公众号：xiangyuejiqiren   （内有更多优秀文章及学习资料）
-@来源: <深度学习之TensorFlow工程化项目实战>配套代码 （700+页）
-@配套代码技术支持：bbs.aianaconda.com      (有问必答)
-"""
+
 import tensorflow as tf
 import numpy as np
 
-#在内存中保存更改是什么，内存卡降低为你
+#在内存中保存
 def GenerateData(datasize = 100):
     train_X = np.linspace(-1, 1, datasize)   #train_X为-1到1之间连续的100个浮点数
     train_Y = 2 * train_X + np.random.randn(*train_X.shape) * 0.3 # y=2x，但是加入了噪声
-    return train_X, train_Y   #以生成器的方式返回
+    return train_X, train_Y   #以生成器的方式缓存
 
 train_data = GenerateData()  
 
@@ -60,7 +55,3 @@ with tf.Session() as sess:	# 建立会话（session）
     showbatch(one_element3,"dataset3")
     showone(one_element4,"dataset4")
     showone(one_element5,"dataset5")
-    
-
-    
-
